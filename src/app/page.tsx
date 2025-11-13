@@ -1,3 +1,4 @@
+  import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Send } from "lucide-react";
 export default function Home() {
   return (
     <main>
@@ -244,34 +245,101 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="section">
-        <div className="container-grid grid gap-10 md:grid-cols-2">
-          <div className="rounded-2xl border bg-card p-6">
-            <h2 className="text-3xl font-bold tracking-tight">Contact Us</h2>
-            <div className="mt-6 grid gap-4 text-muted-foreground">
-              <div>
-                <div className="font-semibold text-foreground">Southeastern Northshore STEM Center</div>
-                <div>SLU Box 10345</div>
-                <div>Hammond, LA 70402</div>
-              </div>
-              <div>
-                <a href="tel:+19855493306" className="hover:text-foreground">(985) 549-3306</a>
-              </div>
-              <div>
-                <a href="mailto:stemcenter@southeastern.edu" className="hover:text-foreground">stemcenter@southeastern.edu</a>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-2xl border bg-card p-6">
-            <h3 className="text-xl font-semibold">Director</h3>
-            <p className="mt-2 text-muted-foreground">Jordan Smith-Kenning</p>
-            <div className="mt-6 overflow-hidden rounded-xl border bg-muted/50">
-              <img src="https://ugc.same-assets.com/buRrJcHrdCl-vPkD_acjkCZ92dkbh04-.jpeg" alt="STEM students" className="h-56 w-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* Contact */}
+<section id="contact" className="section">
+  <div className="container-grid grid gap-10 md:grid-cols-2">
+
+    {/* CONTACT INFO */}
+    <div className="rounded-2xl border bg-card p-6 shadow-sm">
+      <h3 className="text-2xl font-semibold mb-4">General Contact</h3>
+
+      <div className="space-y-4 text-muted-foreground">
+        <p className="flex items-start gap-3">
+          <MapPin className="h-6 w-6 text-blue-600" />
+          <span>
+            Southeastern Northshore STEM Center <br />
+            SLU Box 10345 <br />
+            Hammond, LA 70402
+          </span>
+        </p>
+
+        <p className="flex items-center gap-3">
+          <Phone className="h-6 w-6 text-blue-600" />
+          <a href="tel:+19855493306" className="hover:text-foreground">
+            (985) 549-3306
+          </a>
+        </p>
+
+        <p className="flex items-center gap-3">
+          <Mail className="h-6 w-6 text-blue-600" />
+          <a href="mailto:stemcenter@southeastern.edu" className="hover:text-foreground">
+            stemcenter@southeastern.edu
+          </a>
+        </p>
+      </div>
+
+      {/* SOCIAL LINKS */}
+      <h4 className="mt-8 font-semibold text-lg">Follow Us</h4>
+
+      <div className="flex gap-4 mt-3">
+        <a
+          href="https://www.facebook.com/people/Southeastern-Northshore-STEM-Center/61567141902356/"
+          target="_blank"
+          className="p-2 rounded-lg border hover:bg-muted transition"
+        >
+          <Facebook className="h-5 w-5" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/southeasternnorthshorestem/"
+          target="_blank"
+          className="p-2 rounded-lg border hover:bg-muted transition"
+        >
+          <Instagram className="h-5 w-5" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/southeastern-northshore-stem-center/"
+          target="_blank"
+          className="p-2 rounded-lg border hover:bg-muted transition"
+        >
+          <Linkedin className="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+
+    {/* DIRECTOR CARD */}
+    <div className="rounded-2xl border bg-card p-6 shadow-sm">
+      <h3 className="text-2xl font-semibold">Director</h3>
+<p>
+   <a
+  href="https://www.linkedin.com/in/jordansmithkenning/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-2 text-muted-foreground font-medium hover:text-foreground"
+>
+  Jordan Smith-Kenning
+</a>
+</p>
+      
+<a
+  href="mailto:Jordan.Smith-Kenning@southeastern.edu"
+  className="text-muted-foreground hover:text-foreground"
+>
+  Jordan.Smith-Kenning@southeastern.edu
+</a>
+
+<div className="mt-6 rounded-xl border bg-muted/50 h-96 w-full overflow-hidden">
+        <img
+          src="/images/jordan.jpg"
+          alt="STEM Director"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="border-t py-10">
