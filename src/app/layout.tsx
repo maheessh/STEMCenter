@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ClientBody from "./ClientBody";
+import ClientBody from "./ClientBody"; // Ensure this path is correct based on your folder structure
+import SiteHeader from "@/components/SiteHeader"; // We import the new component
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Southeastern Northshore STEM Center | LaSTEM Region 9",
   description:
-    "Hands-on STEM programs across Livingston, St. Helena, St. Tammany, Tangipahoa, and Washington parishes led by Southeastern Louisiana University and NTCC.",
+    "Hands-on STEM programs across Livingston, St. Helena, St. Tammany, Tangipahoa, and Washington parishes.",
 };
 
 export default function RootLayout({
@@ -33,8 +34,12 @@ export default function RootLayout({
           src="//unpkg.com/same-runtime/dist/index.global.js"
         />
       </head>
-      <body suppressHydrationWarning className="antialiased">
-        <ClientBody>{children}</ClientBody>
+      <body suppressHydrationWarning className="antialiased min-h-screen flex flex-col">
+        <ClientBody>
+          <SiteHeader />
+          {children}
+          {/* You can also move the Footer here later to make it global */}
+        </ClientBody>
       </body>
     </html>
   );
