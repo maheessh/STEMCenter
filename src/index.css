@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 18%;
+
+    --primary: 168 76% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 30% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 15% 50%;
+
+    --accent: 168 76% 95%;
+    --accent-foreground: 168 76% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 168 76% 42%;
+
+    --radius: 0.5rem;
+
+    /* Custom STEM Center tokens */
+    --stem-teal: 168 76% 42%;
+    --stem-teal-light: 168 76% 95%;
+    --stem-navy: 220 30% 18%;
+    --stem-navy-light: 220 20% 35%;
+    --stem-gray: 210 15% 60%;
+    --stem-gray-light: 210 20% 96%;
+    --stem-orange: 25 95% 53%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(168 76% 95%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(220 30% 18% / 0.08);
+    --shadow-card-hover: 0 8px 30px -8px hsl(220 30% 18% / 0.15);
+    --shadow-button: 0 4px 14px -4px hsl(168 76% 42% / 0.4);
+
+    /* Font families */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 30% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 168 76% 50%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 30% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 168 50% 20%;
+    --accent-foreground: 168 76% 80%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 168 76% 50%;
+
+    --stem-teal: 168 76% 50%;
+    --stem-teal-light: 168 50% 15%;
+    --stem-navy: 210 40% 98%;
+    --stem-navy-light: 210 30% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
